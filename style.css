@@ -1,0 +1,69 @@
+.calculator {
+  width: 600px;
+  margin: 0 auto;
+  background-color: grey;
+  border: 1px solid #ccccccf3;
+  padding: 10px;
+}
+
+.display {
+  background-color: #fff;
+  border: 1px solid #ccc;
+  padding: 5px;
+  text-align: right;
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.buttons {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 5px;
+}
+
+button {
+  padding: 10px;
+  font-size: 16px;
+  background-color: #ccc;
+  border: none;
+  cursor: pointer;
+}
+
+.number {
+  background-color: white;
+}
+
+.operator,
+.special {
+  background-color: #ff9800;
+  color: #fff;
+}
+
+button:active {
+  background-color: #ff6600;
+}
+
+/* Animation for green color passing through the word "CALCULATOR" */
+@keyframes colorPassingThrough {
+  0% {
+    background-position: 0 0;
+  }
+
+  100% {
+    background-position: 100% 0;
+  }
+}
+
+.calculator-heading {
+  font-size: 40px;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 30px;
+  position: relative;
+  background-image: linear-gradient(90deg, transparent, rgba(0, 72, 255, 0.963));
+  background-size: 200% 100%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  animation: colorPassingThrough 5s linear infinite;
+}

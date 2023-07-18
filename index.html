@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Project Calculator</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<style>
+  .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+
+  .controls {
+    margin-bottom: 20px;
+  }
+
+  body {
+    background-color: rgba(0, 255, 195, 0.747);
+    background-size: cover;
+    background-position: center;
+  }
+</style>
+
+
+<body>
+  <h1 class="calculator-heading">CALCULATOR</h1>
+  <audio id="audioPlayer" autoplay>
+    <source src="music/good song.mp3" type="audio/mp3">
+    <!-- Add additional <source> elements with different audio formats for better browser compatibility -->
+    <!-- Example: <source src="path/to/your/song.ogg" type="audio/ogg"> -->
+  </audio>
+
+
+
+
+  <div class="container">
+    <div class="controls">
+      <label for="width-input">Width:</label>
+      <input type="number" id="width-input">
+      <label for="height-input">Height:</label>
+      <input type="number" id="height-input">
+      <button id="apply-btn">Apply</button>
+    </div>
+    <div class="calculator">
+      <div class="display" id="display">0</div>
+      <div class="buttons">
+        <button class="operator" id="add">+</button>
+        <button class="operator" id="subtract">-</button>
+        <button class="operator" id="multiply">*</button>
+        <button class="operator" id="divide">/</button>
+        <button class="number" id="num-0">0</button>
+        <button class="number" id="num-1">1</button>
+        <button class="number" id="num-2">2</button>
+        <button class="number" id="num-3">3</button>
+        <button class="number" id="num-4">4</button>
+        <button class="number" id="num-5">5</button>
+        <button class="number" id="num-6">6</button>
+        <button class="number" id="num-7">7</button>
+        <button class="number" id="num-8">8</button>
+        <button class="number" id="num-9">9</button>
+        <button class="special" id="decimal">.</button>
+        <button class="special" id="equals">=</button>
+        <button class="special" id="clear">Clear</button>
+        <button class="special" id="backspace">&larr;</button>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+
+    <script>// Get the audio element by its ID
+      const audioPlayer = document.getElementById('audioPlayer');
+
+      // Play the audio automatically when the page loads
+      window.addEventListener('load', () => {
+        audioPlayer.play().catch((error) => {
+          console.error('Audio playback failed:', error);
+        });
+      });
+
+
+
+    </script>
+
+
+</body>
+
+</html>
