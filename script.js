@@ -22,21 +22,7 @@ function divide(a, b) {
 // Get calculator element
 const calculatorElement = document.querySelector('.calculator');
 
-// Get input elements
-const widthInput = document.getElementById('width-input');
-const heightInput = document.getElementById('height-input');
-const applyButton = document.getElementById('apply-btn');
 
-// Apply button click event listener
-applyButton.addEventListener('click', () => {
-  const width = parseInt(widthInput.value);
-  const height = parseInt(heightInput.value);
-
-  if (!isNaN(width) && !isNaN(height)) {
-    calculatorElement.style.width = `${width}px`;
-    calculatorElement.style.height = `${height}px`;
-  }
-});
 
 // Variables for calculator operation
 let expression = '';
@@ -83,13 +69,25 @@ document.querySelectorAll('.operator').forEach((button) => {
 document.getElementById('equals').addEventListener('click', () => {
   try {
     const result = evaluateExpression();
-    updateDisplay(result);
-    expression = String(result);
+    const roundedResult = roundResult(result); // Round the result to handle precision
+
+    updateDisplay(roundedResult);
+    expression = String(roundedResult); // Use roundedResult for further calculations
     shouldResetDisplay = true;
   } catch (error) {
     displayError('Invalid expression');
   }
 });
+
+// Helper function to handle precision when performing calculations
+function roundResult(value) {
+  const precision = 4; // Set the desired precision (e.g., 4 decimal places)
+  return parseFloat(value.toFixed(precision));
+}
+
+
+
+
 
 // Event listener for the clear button
 document.getElementById('clear').addEventListener('click', () => {
